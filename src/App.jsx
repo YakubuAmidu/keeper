@@ -1,9 +1,14 @@
 import React from 'react';
+import Header from './Header';
+import Note from './Note';
+import Footer from './Footer';
 
 const App = () => {
   return (
     <div>
-      <h1>App</h1>
+      <Header />
+      <Note />
+      <Footer />
     </div>
   );
 };

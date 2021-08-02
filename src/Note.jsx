@@ -2,9 +2,11 @@ import React from 'react';
 
 const Note = () => {
   return (
-    <div>
-      <h1>Note.jsx</h1>
-      <p>This where content goes</p>
+    <div className='note'>
+      <h1>
+        This is the note <title></title>
+      </h1>
+      <p>This is the note content</p>
     </div>
   );
 };
