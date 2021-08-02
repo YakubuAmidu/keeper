@@ -1,9 +1,9 @@
 import React from 'react';
 import Header from './Header';
-import Note from './Note';
-import Footer from './Footer';
+import Note from '../Note';
+import Footer from '../Footer';
 
-const App = () => {
+function App() {
   return (
     <div>
       <Header />
@@ -11,6 +11,6 @@ const App = () => {
       <Footer />
     </div>
   );
-};
+}
 
 export default App;
