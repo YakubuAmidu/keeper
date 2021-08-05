@@ -1,22 +1,24 @@
 import React, { useState } from 'react';
 
-function CreateArea() {
+function CreateArea(props) {
   const [note, setNote] = useState({
     title: '',
     content: '',
   });
 
-  const [itemValues, setItemValues] = useState([]);
-
   function handleChange(event) {
-    const newItem = event.target.value;
-    setItems(newItem);
+    const { name, value } = event.target;
+
+    setNote((prevNote) => {
+      return {
+        ...prevNote,
+        [name]: value,
+      };
+    });
   }
 
-  function handleClick(event) {
-    console.log('Clicked');
-    setItemValues(items);
-
+  function submitNote(event) {
+    props.onAdd(note);
     event.preventDefault();
   }
 
@@ -27,7 +29,6 @@ function CreateArea() {
           name='title'
           value={note.title}
           placeholder='Title'
-          value='item'
           onChange={handleChange}
         />
         <textarea
@@ -37,7 +38,7 @@ function CreateArea() {
           rows='3'
           onChange={handleChange}
         />
-        <button onClick={handleClick}>Add</button>
+        <button onClick={submitNote}>Add</button>
       </form>
     </div>
   );
